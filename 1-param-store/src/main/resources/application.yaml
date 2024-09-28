@@ -1,0 +1,21 @@
+vgs:
+  infra-env: ${INFRA_ENV:vault} # f.e. infra, platform, mft
+  data-env: ${DATA_ENV:sandbox} # sandbox, live
+
+spring:
+  application:
+    name: ${APP_NAME:param-store-service} # f.e. knox-service, forward-http-proxy ...
+  cloud:
+    aws:
+      region:
+        static: us-west-2
+      parameterstore:
+        endpoint: ${AWS_ENDPOINT:http://localhost:4566}
+  config:
+    import:
+      - aws-parameterstore:/prod/${vgs.infra-env}/shared/;
+      - aws-parameterstore:/prod/${vgs.infra-env}/${spring.application.name}/;
+      - optional:aws-parameterstore:/prod/${vgs.infra-env}/${vgs.data-env}/${spring.application.name};
+
+server:
+  port: 8081

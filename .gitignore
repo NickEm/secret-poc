@@ -29,6 +29,6 @@ application-local.yaml
 
 .env
 
-local/
+.local/aws/state/
 
 aws/artifact/**

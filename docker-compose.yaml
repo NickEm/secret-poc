@@ -1,0 +1,19 @@
+services:
+  localstack:
+    container_name: ls
+    image: localstack/localstack:3.7.2
+    environment:
+      SERVICES: ssm,secretsmanager,iam
+      AWS_DEFAULT_REGION: us-west-2
+      AWS_REGION: us-west-2
+      AWS_ACCESS_KEY_ID: test-key
+      AWS_SECRET_ACCESS_KEY: test-secret
+      PERSISTENCE: 1
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./.local/aws/state:/var/lib/localstack
+      - ./.local/aws/data/:/var/lib/localstack/tmp/data/
+      - ./.local/aws/setup-iam.sh:/etc/localstack/init/ready.d/setup-iam.sh
+      - ./.local/aws/setup-param-store.sh:/etc/localstack/init/ready.d/setup-param-store.sh
+      - ./.local/aws/setup-secret-manager.sh:/etc/localstack/init/ready.d/setup-secret-manager.sh

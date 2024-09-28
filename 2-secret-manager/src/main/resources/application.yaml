@@ -1,0 +1,21 @@
+vgs:
+  infra-env: ${INFRA_ENV:vault} # f.e. infra, platform, mft
+  data-env: ${DATA_ENV:sandbox} # sandbox, live
+
+spring:
+  application:
+    name: ${APP_NAME:secret-manager-service} # f.e. knox-service, forward-http-proxy ...
+  cloud:
+    aws:
+      region:
+        static: us-west-2
+      secretsmanager:
+        endpoint: ${AWS_ENDPOINT:http://localhost:4566}
+  config:
+    import:
+      - aws-secretsmanager:/prod/${vgs.infra-env}/shared/;
+      - aws-secretsmanager:/prod/${vgs.infra-env}/${spring.application.name}/;
+#      - optional:aws-secretsmanager:/prod/${vgs.infra-env}/${vgs.data-env}/${spring.application.name}/;
+
+server:
+  port: 8082
