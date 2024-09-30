@@ -2,7 +2,7 @@
   <configuration default="false" name="1-param-store" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="1-param-store" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.verygoodsecurity.ParamStoreApplication" />
-    <option name="VM_PARAMETERS" value="-Dorg.springframework.cloud.bindings.boot.enable=true -Dspring.cloud.aws.credentials.access-key=LKIAQAAAAAAALXSEBUMJ -Dspring.cloud.aws.credentials.secret-key=lwr9srOzWT2e2Vs/MGHQNBkgPdEug2FAg/iLAx/p" />
+    <option name="VM_PARAMETERS" value="-Dorg.springframework.cloud.bindings.boot.enable=true -Dspring.cloud.aws.credentials.access-key=TODO -Dspring.cloud.aws.credentials.secret-key=TODO" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.verygoodsecurity.*" />

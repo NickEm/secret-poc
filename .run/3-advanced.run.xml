@@ -3,7 +3,7 @@
     <option name="ACTIVE_PROFILES" value="local" />
     <module name="3-advanced" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.verygoodsecurity.AdvancedApplication" />
-    <option name="VM_PARAMETERS" value="-Dorg.springframework.cloud.bindings.boot.enable=true -Dspring.cloud.aws.credentials.access-key=LKIAQAAAAAAABMQ5JRDW -Dspring.cloud.aws.credentials.secret-key=5sT/QpyadvTJT+6Y5GIg0qZn7PwDTp611OQEk2O0" />
+    <option name="VM_PARAMETERS" value="-Dorg.springframework.cloud.bindings.boot.enable=true -Dspring.cloud.aws.credentials.access-key=TODO -Dspring.cloud.aws.credentials.secret-key=TODO" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.verygoodsecurity.*" />
