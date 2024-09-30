@@ -26,6 +26,7 @@ public class AdvancedApplication {
 @Configuration
 @ConfigurationProperties(prefix = "service.datasource")
 class ReloadingConfiguration {
+
     public String username;
     public String password;
 

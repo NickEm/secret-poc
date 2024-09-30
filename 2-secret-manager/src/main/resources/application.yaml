@@ -15,7 +15,7 @@ spring:
     import:
       - aws-secretsmanager:/prod/${vgs.infra-env}/shared/;
       - aws-secretsmanager:/prod/${vgs.infra-env}/${spring.application.name}/;
-#      - optional:aws-secretsmanager:/prod/${vgs.infra-env}/${vgs.data-env}/${spring.application.name}/;
+      - optional:aws-secretsmanager:/prod/${vgs.infra-env}/${vgs.data-env}/${spring.application.name}/;
 
 server:
   port: 8082

@@ -4,18 +4,21 @@ vgs:
 
 spring:
   application:
-    name: ${APP_NAME:param-store-service} # f.e. knox-service, forward-http-proxy ...
+    name: ${APP_NAME:secret-manager-service} # f.e. knox-service, forward-http-proxy ...
   cloud:
     aws:
       region:
         static: us-west-2
-      parameterstore:
+      secretsmanager:
+        reload:
+          strategy: refresh
+          period: 3s
         endpoint: ${AWS_ENDPOINT:http://localhost:4566}
   config:
     import:
-      - aws-parameterstore:/prod/${vgs.infra-env}/shared/;
-      - aws-parameterstore:/prod/${vgs.infra-env}/param-store-service/;
-      - optional:aws-parameterstore:/prod/${vgs.infra-env}/${vgs.data-env}/param-store-service;
+      - aws-secretsmanager:/prod/${vgs.infra-env}/shared/;
+      - aws-secretsmanager:/prod/${vgs.infra-env}/${spring.application.name}/;
+      - optional:aws-secretsmanager:/prod/${vgs.infra-env}/${vgs.data-env}/${spring.application.name}/;
 
 server:
   port: 8083

@@ -8,6 +8,19 @@
             * Property from the VM option
                 * From property from VM is the latest override
 
+
+#### Example of commands to Secret Manager
+
+* Create Secret
 ```shell
-aws secretsmanager get-secret-value --secret-id test-secret
+aws --endpoint-url=http://localhost:4566 secretsmanager create-secret \
+    --name "/prod/vault/secret-manager-service/" \
+    --secret-string file://${PWD}/.local/aws/data/secret/3-secret-environment-service.json
+```
+
+* Update Secret
+```shell
+aws --endpoint-url=http://localhost:4566 secretsmanager put-secret-value \
+    --secret-id "/prod/vault/sandbox/secret-manager-service/" \
+    --secret-string file://${PWD}/.local/aws/data/secret/3-secret-environment-service.json
 ```

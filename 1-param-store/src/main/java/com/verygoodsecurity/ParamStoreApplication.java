@@ -26,6 +26,7 @@ class UserCredentials {
 
     @Autowired
     private ApplicationContext context;
+
     @Value("${service.datasource.username}")
     public String username;
     @Value("${service.datasource.password}")
