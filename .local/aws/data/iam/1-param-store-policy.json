@@ -5,8 +5,8 @@
       "Effect": "Allow",
       "Action": "ssm:GetParametersByPath",
       "Resource": [
-        "arn:aws:ssm:*:*:parameter/app/vault/common/*",
-        "arn:aws:ssm:*:*:parameter/app/vault/param-store-service/*"
+        "arn:aws:ssm:*:*:parameter/prod/vault/shared/*",
+        "arn:aws:ssm:*:*:parameter/prod/vault/param-store-service/*"
       ]
     }
   ]

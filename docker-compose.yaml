@@ -9,6 +9,8 @@ services:
       AWS_ACCESS_KEY_ID: test-key
       AWS_SECRET_ACCESS_KEY: test-secret
       PERSISTENCE: 1
+      DEBUG: 1
+      ENFORCE_IAM: 1
     ports:
       - "4566:4566"
     volumes:
